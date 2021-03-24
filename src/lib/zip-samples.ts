@@ -28,7 +28,7 @@ export function zipSamples(eegReadings: Observable<EEGReading>): Observable<EEGS
         concat(from([buffer])),
         mergeMap((readings: EEGReading[]) => {
             const result = readings[0].samples.map((x, index) => {
-                const data = [NaN, NaN, NaN, NaN, NaN];
+                const data = [NaN, NaN, NaN, NaN, NaN,NaN];
                 for (const reading of readings) {
                     data[reading.electrode] = reading.samples[index];
                 }
